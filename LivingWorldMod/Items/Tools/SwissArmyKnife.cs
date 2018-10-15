@@ -38,6 +38,7 @@ namespace LivingWorldMod.Items.Tools
 			recipe.AddIngredient(ItemID.PlatinumPickaxe, 1);
 			recipe.AddIngredient(ItemID.PlatinumHammer, 1);
 			recipe.AddIngredient(ItemID.PlatinumAxe, 1);
+            recipe.AddIngredient(ItemID.DirtBlock, 1);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
