@@ -4,17 +4,16 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LivingWorldMod.Items.Weapons
-{
-    public class BayonetRifle : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+namespace LivingWorldMod.Items.Weapons {
+
+    public class BayonetRifle : ModItem {
+
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Bayonet Rifle");
             Tooltip.SetDefault("Can stab and shoot");
         }
-        public override void SetDefaults()
-        {
+
+        public override void SetDefaults() {
             item.damage = 32;
             item.useStyle = 5;
             item.useAnimation = 24;
@@ -36,8 +35,7 @@ namespace LivingWorldMod.Items.Weapons
             item.shoot = mod.ProjectileType<BayonetRifleSpearProjectile>();
         }
 
-        public override void AddRecipes()
-        {
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.PlatinumPickaxe, 1);
             recipe.AddTile(TileID.WorkBenches);
@@ -45,15 +43,12 @@ namespace LivingWorldMod.Items.Weapons
             recipe.AddRecipe();
         }
 
-        public override bool AltFunctionUse(Player player)
-        {
+        public override bool AltFunctionUse(Player player) {
             return true;
         }
 
-        public override bool CanUseItem(Player player)
-        {
-            if (player.altFunctionUse == 2)     //2 is right click
-            {
+        public override bool CanUseItem(Player player) {
+            if (player.altFunctionUse == 2) {    //2 is right click
                 item.melee = false;
                 item.ranged = true;
                 item.useTime = 20;
@@ -64,10 +59,7 @@ namespace LivingWorldMod.Items.Weapons
                 item.shootSpeed = 10f;
                 item.useAmmo = AmmoID.Bullet;
                 item.noUseGraphic = false;
-
-            }
-            else
-            {
+            } else {
                 item.ranged = false;
                 item.melee = true;
                 item.useTime = 24;

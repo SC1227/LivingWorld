@@ -3,17 +3,16 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LivingWorldMod.Items.Tools
-{
-	public class SwissArmyKnife : ModItem
-	{
-		public override void SetStaticDefaults()
-		{
+namespace LivingWorldMod.Items.Tools {
+
+	public class SwissArmyKnife : ModItem {
+
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Swiss Army Knife");
 			Tooltip.SetDefault("Functions as a pickaxe, axe, and hammer");
 		}
-		public override void SetDefaults()
-		{
+
+		public override void SetDefaults() {
 			item.damage = 8;
 			item.melee = true;
 			item.width = 40;
@@ -32,8 +31,7 @@ namespace LivingWorldMod.Items.Tools
 			item.hammer = 60;
 		}
 
-		public override void AddRecipes()
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.PlatinumPickaxe, 1);
 			recipe.AddIngredient(ItemID.PlatinumHammer, 1);
