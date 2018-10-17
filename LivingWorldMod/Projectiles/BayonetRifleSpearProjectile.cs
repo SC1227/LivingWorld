@@ -16,7 +16,7 @@ namespace LivingWorldMod.Projectiles {
             projectile.height = 18;
             projectile.aiStyle = 19;
             projectile.penetrate = -1;
-            projectile.scale = 1.3f;
+            projectile.scale = 1f;
             projectile.alpha = 0;
 
             projectile.hide = true;
@@ -28,6 +28,7 @@ namespace LivingWorldMod.Projectiles {
 
         // In here the AI uses this example, to make the code more organized and readable
         // Also showcased in ExampleJavelinProjectile.cs
+        // Changes how far the spear moves
         public float movementFactor {  // Change this value to alter how fast the spear moves
             get { return projectile.ai[0]; }
             set { projectile.ai[0] = value; }
@@ -44,6 +45,8 @@ namespace LivingWorldMod.Projectiles {
             projectile.direction = projOwner.direction;
             projOwner.heldProj = projectile.whoAmI;
             projOwner.itemTime = projOwner.itemAnimation;
+
+            // Changes the origin point of the spear
             projectile.position.X = ownerMountedCenter.X - (float)(projectile.width / 2);
             projectile.position.Y = ownerMountedCenter.Y - (float)(projectile.height / 2);
 
@@ -55,9 +58,9 @@ namespace LivingWorldMod.Projectiles {
                 }
 
                 if (projOwner.itemAnimation < projOwner.itemAnimationMax / 3) {    // Somewhere along the item animation, make sure the spear moves back
-                    movementFactor -= 2.4f;
+                    movementFactor -= 2.4f;                      // Changes how fast the spear moves back (more negative = faster)
                 } else {   // Otherwise, increase the movement factor
-                    movementFactor += 2.1f;
+                    movementFactor += 2.1f;                      // Changes how fast and far out the spear goes (more positive = farther/faster)
                 }
             }
 
