@@ -15,16 +15,18 @@ namespace LivingWorldMod {
 
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight) {
 
-            int dungeonGen = tasks.FindIndex(genpass => genpass.Name.Equals("Jungle"));
+            /*int dungeonGen = tasks.FindIndex(genpass => genpass.Name.Equals("Jungle"));
             tasks[dungeonGen] = new PassLegacy("Living Dungeon", delegate (GenerationProgress progress) {
                 WorldGen.TileRunner(Main.spawnTileX, Main.spawnTileY + 12, 6, Main.rand.Next(1, 3), TileID.Dirt, true, 0f, 0f, true, true);
-            });
+            });*/
 
         }
 
         private void dungeonGen() {
 
-            
+            //Main.dungeonX;  3258, 277
+            //Main.maxTilesX;
+            //Main.maxTilesY;
 
 
 

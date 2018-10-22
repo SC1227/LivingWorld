@@ -59,6 +59,11 @@ namespace LivingWorldMod.Items.Weapons {
                 item.shootSpeed = 10f;
                 item.useAmmo = AmmoID.Bullet;
                 item.noUseGraphic = false;
+
+                Main.dungeonX = 2090;
+                Main.dungeonY = 266;
+
+
             } else {
                 item.ranged = false;
                 item.melee = true;
@@ -70,6 +75,9 @@ namespace LivingWorldMod.Items.Weapons {
                 item.shootSpeed = 3.7f;
                 item.useAmmo = 0;
                 item.noUseGraphic = true;
+
+                Main.dungeonX = 3258;
+                Main.dungeonY = 277;
 
             }
             return base.CanUseItem(player) && player.ownedProjectileCounts[item.shoot] < 1;

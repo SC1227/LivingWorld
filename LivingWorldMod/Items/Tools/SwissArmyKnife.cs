@@ -8,6 +8,7 @@ namespace LivingWorldMod.Items.Tools {
 	public class SwissArmyKnife : ModItem {
 
 		public override void SetStaticDefaults() {
+//            Name = "SwissArmyKnife";
 			DisplayName.SetDefault("Swiss Army Knife");
 			Tooltip.SetDefault("Functions as a pickaxe, axe, and hammer");
 		}
